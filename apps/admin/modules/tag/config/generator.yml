@@ -1,0 +1,35 @@
+generator:
+  class: dmAdminDoctrineGenerator
+  param:
+    model_class: Tag
+    theme: dmAdmin
+    non_verbose_templates: true
+    with_show: false
+    route_prefix: tag
+    with_doctrine_route: false
+    config:
+      actions: ~
+      fields:
+        product_list:
+          label: Оборудование
+      list:
+        display:
+          - '=title'
+          - product_list
+        sort:
+          - title
+          - asc
+        table_method: getAdminListQuery
+        table_count_method: ~
+        sortable: false
+      filter:
+        display:
+          - title
+      form:
+        display:
+          NONE: [title]
+          Оборудование: [product_list]
+        class: TagAdminForm
+        fields: {  }
+      edit: ~
+      new: ~

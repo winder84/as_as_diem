@@ -1,0 +1,89 @@
+Category:
+  actAs:
+    DmVersionable:
+    DmSortable: { new: last }
+  columns:
+    title:            { type: string(255), notnull: true }
+    prevdescription:  { type: clob, extra: ckeditor }
+    description:      { type: clob, extra: ckeditor }
+    image_id:         { type: integer }
+    is_active:        { type: boolean, notnull: true, default:true}
+    category_id:      { type: integer }
+  relations:
+    Category:
+      foreignAlias:   Categories
+    Image:
+      class:      DmMedia
+      local:      image_id
+      onDelete:   RESTRICT
+
+Mark:
+  actAs:
+    DmVersionable:
+    DmSortable: { new: last }
+  columns:
+    title:             { type: string(255), notnull: true }
+    country:           { type: string(255), notnull: true }
+    prevdescription:   { type: clob, extra: ckeditor }
+    description:       { type: clob, extra: ckeditor }
+    image_id:          { type: integer }
+    is_active:         { type: boolean, notnull: true, default:true}
+  relations:
+    Image:
+      class:      DmMedia
+      local:      image_id
+      onDelete:   RESTRICT
+
+Product:
+  actAs:
+    DmVersionable:
+    DmSortable: { new: last }
+    DmGallery:
+  columns:
+    title:             { type: string(255), notnull: true }
+    prevdescription:   { type: clob, extra: ckeditor }
+    description:       { type: clob, extra: ckeditor }
+    image_id:          { type: integer }
+    is_active:         { type: boolean, notnull: true, default:true}
+    category_id:       { type: integer, notnull: true }
+    mark_id:           { type: integer, notnull: true }
+    cost:              { type: integer }
+    isonslider:        { type: boolean, notnull: true, default:false}
+    isonmain:          { type: boolean, notnull: true, default:false}
+  relations:
+    Category:
+      foreignAlias:   Products
+    Mark:
+      foreignAlias:   Products
+    Image:
+      class:      DmMedia
+      local:      image_id
+      onDelete:   RESTRICT
+    Tag:
+      class: Tag
+      refClass: Taglink
+      local: product_id
+      foreign: tag_id
+
+Tag:
+  columns:
+    title:             { type: string(255), notnull: true }
+
+Taglink:
+  columns:
+    tag_id:            { type: integer, notnull: true }
+    product_id:        { type: integer, notnull: true }
+  relations:
+    Tag:
+      foreignAlias:   Taglinks
+    Product:
+      foreignAlias:   Taglinks
+
+Contact:
+  actAs:              [ Timestampable ]
+  columns:
+    name:             { type: string(255), notnull: true }
+    email:            { type: string(255), notnull: false }
+    phone:            { type: string(255), notnull: true }
+    topic:            { type: string(255) }
+    body:             { type: clob }

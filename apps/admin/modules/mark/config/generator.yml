@@ -1,0 +1,45 @@
+generator:
+  class: dmAdminDoctrineGenerator
+  param:
+    model_class: Mark
+    theme: dmAdmin
+    non_verbose_templates: true
+    with_show: false
+    route_prefix: mark
+    with_doctrine_route: false
+    config:
+      actions: ~
+      fields:
+        is_active:
+          label: Active
+      list:
+        display:
+          - '=title'
+          - image_id
+          - country
+          - is_active
+        sort:
+          - title
+          - asc
+        table_method: getAdminListQuery
+        table_count_method: ~
+        sortable: true
+      filter:
+        display:
+          - title
+          - is_active
+          - country
+          - prevdescription
+          - description
+          - image_id
+      form:
+        display:
+          NONE: [title, is_active]
+          Image: [image_id_form, image_id_view]
+          Description: [description, prevdescription]
+          Оборудование: [products_list]
+          Others: [country]
+        class: MarkAdminForm
+        fields: {  }
+      edit: ~
+      new: ~

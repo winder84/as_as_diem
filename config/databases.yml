@@ -1,0 +1,7 @@
+all:
+  doctrine:
+    class: sfDoctrineDatabase
+    param:
+      dsn: 'mysql:host=mysql65.1gb.ru;dbname=gb_x_avtos21f;'
+      username: gb_x_avtos21f
+      password: 'f2727158'

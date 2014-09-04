@@ -1,0 +1,59 @@
+Content:
+
+  Global:
+  
+    main:                   # the main module is required, and must not be removed.
+      components:
+        header:
+        footer:
+
+  Avtoservice:
+    category:
+      model:                  Category
+      page:                   true
+      name:                   Категория|Категории
+      components:
+        listByCategory:
+          filters:            [ category ]
+        list:
+        show:
+
+    mark:
+      model:                  Mark
+      page:                   true
+      name:                   Фирма|Фирмы
+      components:
+        list:
+        show:
+
+    product:
+      parent:                 category
+      page:                   true
+      name:                   Оборудование|Оборудование
+      components:
+        list:
+        listByCategory:
+          filters:            [ category ]
+        listByTag:
+          filters:            [ tag ]
+        listBySpecification:
+          filters:            [ specification ]
+        listByMark:
+          filters:            [ mark ]
+        listBySlider:
+          filters:            [ isonslider ]
+        listByMain:
+          filters:            [ isonmain ]
+        show:
+
+    tag:
+      model:                  Tag
+      name:                   Тег|Теги
+      page:                   true
+      components:
+        list:
+
+  Feedback:              # arbitrary namespace, used in admin content menu
+    contact:             # module's name
+      components:        # module's components
+        form:            # this module has a form action

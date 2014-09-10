@@ -11,7 +11,7 @@ class contactActions extends myFrontModuleActions
 
 		if ($request->isMethod('post') && $form->bindAndValid($request))
 		{
-			$to = 'winder84@mail.ru, tech@kmv.ru';
+			$to = 'jackob.k@yandex.ru, tech@kmv.ru';
 //			$to = 'winder84@mail.ru';
 			$message = "<br />
 				Имя: " . $_REQUEST['contact_form']['name'] .

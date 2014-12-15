@@ -6,6 +6,8 @@ echo _open('div.productShowDiv');
 			echo _media($product->Image)->size(300, 300)->method('fit');
 			if (!empty($product->cost)) {
 				echo _tag('p.productShowCost', 'Цена: ' . number_format($product->cost, 0, '.', ' ') . ' руб.');
+			} else {
+				echo _tag('p.productShowCost', 'Цена: по запросу');
 			}
 		echo _close('div');
 		echo _open('div.productShowTD');

@@ -1,3 +1,4 @@
+<script src='https://www.google.com/recaptcha/api.js'></script>
 <?php // Vars: $form
 
 // open the form tag with a contact_form css class
@@ -32,6 +33,12 @@ echo _tag('table.contact_form_table',
 			'Сообщение:').
 		_tag('td',
 			$form['body']->field()->error())
+	).
+	_tag('tr',
+		_tag('td',
+			'').
+		_tag('td',
+			'<div class="g-recaptcha" data-sitekey="6Lf8igATAAAAALMJCjszQwR2WB3wQvzLzOP3EfJh"></div>')
 	)
 //	_tag('tr',
 //		_tag('td',
@@ -40,7 +47,6 @@ echo _tag('table.contact_form_table',
 //			'<div class="my_recapcha" id="my_recapcha"></div>')
 //	)
 );
-echo '<input hidden="hidden" style="display: none;" name="botScan" id="botScan" value="">';
 echo $form->renderHiddenFields();
 
 // change the submit button text

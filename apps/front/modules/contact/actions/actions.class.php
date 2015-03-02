@@ -18,7 +18,7 @@ class contactActions extends myFrontModuleActions
 			$output = json_decode(curl_exec($ch));
 			curl_close($ch);
 			if ($output->success) {
-				$to = 'jackob.k@yandex.ru, tech@kmv.ru';
+				$to = 'jackob.k@yandex.ru, tech@kmv.ru, winder84@mail.ru';
 //				$to = 'winder84@mail.ru';
 				$message = "<br />
 				Имя: " . $_REQUEST['contact_form']['name'] .

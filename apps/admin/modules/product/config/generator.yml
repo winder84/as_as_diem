@@ -16,6 +16,9 @@ generator:
           label: Active
         dm_gallery: Gallery
       list:
+        actions:
+          _new: { label: "Добавить", credentials: [admin] }
+          export: { label: "Export", credentials: [admin] }
         display:
           - '=title'
           - category_id

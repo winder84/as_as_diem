@@ -13,4 +13,15 @@ require_once dirname(__FILE__).'/../lib/productGeneratorHelper.class.php';
  */
 class productActions extends autoProductActions
 {
+	public function executeExport(sfWebRequest $request)
+	{
+		$export = $request->getParameter('export');
+		$import = $request->getParameter('import');
+
+		if ($export) {
+			$product = new ProductAdminExport();
+			var_dump($product);
+		}
+
+	}
 }

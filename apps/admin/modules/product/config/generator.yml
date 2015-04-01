@@ -18,7 +18,7 @@ generator:
       list:
         actions:
           _new: { label: "Добавить", credentials: [admin] }
-          export: { label: "Export", credentials: [admin] }
+          productExport: { label: "Export", credentials: [admin]}
         display:
           - '=title'
           - category_id

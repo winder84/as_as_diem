@@ -19,7 +19,7 @@
 </div>
 
 <div style="width: 500px; margin: 50px auto; text-align: center;">
-	<form action="" name="importForm" method="post">
+	<form enctype="multipart/form-data" action="" name="importForm" method="post">
 		<h1 style="margin: 10px; text-align: center;">После правки цен необходимо загрузить файл обратно на сервер!</h1>
 		<br />
 		<br />

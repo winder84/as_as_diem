@@ -23,13 +23,6 @@ class productComponents extends myFrontModuleComponents
     $this->productPager = $this->getPager($query);
   }
 
-  public function executeListBySpecification()
-  {
-    $query = $this->getListQuery();
-    
-    $this->productPager = $this->getPager($query);
-  }
-
   public function executeListByMark()
   {
     $query = $this->getListQuery();
@@ -46,7 +39,7 @@ class productComponents extends myFrontModuleComponents
 
   public function executeListByMain()
   {
-    $query = $this->getListQuery();
+    $query = $this->getListQuery('product')->andWhere('product.isonmain = 1');
     
     $this->productPager = $this->getPager($query);
   }

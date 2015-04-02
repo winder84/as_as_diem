@@ -37,3 +37,17 @@ all:
                                         # the report request is sent only once, when a superadministrator logs in.
   ckeditor:
       config:
+
+  seo:                                  # Search engine optimization configuration
+    use_keywords:         true          # Keywords are useless for seo, but you can use them if you want
+    truncate:                           # Max length for meta fields. Can not exceed 255 characters
+      slug:               255
+      name:               255
+      title:              80
+      h1:                 255
+      description:        160
+      keywords:           255
+
+  performance:
+    enable_mailer:        true          # Set to false to disable Swift loading: significant performance boost.
+                                        # If set to false, you can enable the mailer on demand with dm::enableMailer()

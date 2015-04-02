@@ -36,8 +36,6 @@ Content:
           filters:            [ category ]
         listByTag:
           filters:            [ tag ]
-        listBySpecification:
-          filters:            [ specification ]
         listByMark:
           filters:            [ mark ]
         listBySlider:

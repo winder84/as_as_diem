@@ -59,7 +59,7 @@ class productActions extends autoProductActions
 				$productObject->cost = $productCost;
 				$productObject->save();
 			}
+			$this->getUser()->setFlash('notice', 'Выполнен импорт оборудования!');
 		}
-
 	}
 }

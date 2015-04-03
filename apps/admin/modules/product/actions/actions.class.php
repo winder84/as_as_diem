@@ -23,6 +23,7 @@ class productActions extends autoProductActions
 		if ($export) {
 			$this->products = Doctrine::getTable('Product')->findAll();
 			foreach ($this->products as $product) {
+				$product->title = str_replace(array("'",'"'),' ', $product->title);
 				$this->data .= $product->id . ';' . $product->title . ';' . $product->cost . ";\n";
 			}
 
